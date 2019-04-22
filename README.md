@@ -1,8 +1,8 @@
 ## Steps
 
-1. Class definitions(book, DVD, furniture)[]
-2. Db connection[]
-3. Create objects[]
+1. Class definitions(book, DVD, furniture)[+]
+2. Db connection[+]
+3. Create objects[+]
 4. After creating objs getconnection with db[]
 5. İnsert to data json obj[]
 6. Use (1-5) with post method[]
