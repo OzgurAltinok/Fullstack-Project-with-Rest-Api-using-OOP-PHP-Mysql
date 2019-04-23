@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link href="style.css" rel="stylesheet" />
+
+    <title>Product New</title>
+  </head>
+
+  <body>
+    <span id="mySpan">
+      <h2>Product Add</h2>
+      <span>
+        <form action="index.html">
+          <input type="button" value="Save" />
+          <input type="submit" value="Go Back" />
+        </form>
+      </span>
+    </span>
+
+    <hr />
+    <div id="one">
+      <form>
+        SKU:<br />
+        <input type="text" name="sku" /><br />
+        Name:<br />
+        <input type="text" name="name" /><br />
+        Price:<br />
+        <input type="text" name="price" /><br /><br />
+        Type Switcher:
+        <select>
+          <option value="sku" selected>Book</option>
+          <option value="name">Dvddisc</option>
+          <option value="price">Furniture</option>
+        </select>
+      </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- <script src="main.js"></script> -->
+  </body>
+</html>

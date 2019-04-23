@@ -75,3 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         error_log("Failed to Post Data!");
     }
 }
+
+elseif ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
+
+}

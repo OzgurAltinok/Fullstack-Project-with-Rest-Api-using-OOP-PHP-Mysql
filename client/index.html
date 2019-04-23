@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link href="style.css" rel="stylesheet" />
+
+    <title>Product List</title>
+  </head>
+
+  <body>
+    <span id="mySpan">
+      <h2>Product List</h2>
+      <span>
+        <form action="/newproduct.html">
+          <select>
+            <option value="delete">Mass Delete Action</option>
+          </select>
+          <input type="button" value="Apply" />
+          <input type="submit" value="Go to New Product Page" />
+        </form>
+      </span>
+    </span>
+
+    <hr />
+    <div id="one"></div>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
