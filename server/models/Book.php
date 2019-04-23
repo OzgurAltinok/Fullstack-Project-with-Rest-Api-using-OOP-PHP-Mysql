@@ -1,7 +1,10 @@
 <?php
 
-class Book implements Product
+class Book extends Product
 {
+    private $sku;
+    private $name;
+    private $price;
     private $weight;
 
     public function __construct($sku, $name, $price, $weight)

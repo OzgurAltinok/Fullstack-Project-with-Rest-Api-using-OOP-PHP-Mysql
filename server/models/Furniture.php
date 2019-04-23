@@ -1,7 +1,10 @@
 <?php
 
-class Furniture implements Product
+class Furniture extends Product
 {
+    private $sku;
+    private $name;
+    private $price;
     private $dimensions;
 
     public function __construct($sku, $name, $price, $dimensions)

@@ -1,7 +1,10 @@
 <?php
 
-class Dvddisc implements Product
+class Dvddisc extends Product
 {
+    private $sku;
+    private $name;
+    private $price;
     private $size;
 
     public function __construct($sku, $name, $price, $size)
