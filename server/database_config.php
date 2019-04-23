@@ -23,19 +23,20 @@ class Database
 
     public function getDataFromTable()
     {
-        $con=mysqli_connect("localhost", "root", "", "example");
+        $con = mysqli_connect("localhost", "root", "", "example");
+
         // Check connection
         if (mysqli_connect_errno()) {
             echo "Failed to connect to MySQL: " . mysqli_connect_error();
         }
 
-        // Perform queries
+        // Operate the getting data query
         $result = mysqli_query($con, "SELECT * FROM mytable");
-        // mysqli_query($con,"INSERT INTO Persons (FirstName,LastName,Age)
-        // VALUES ('Glenn','Quagmire',33)");
 
+        // Create an array to handle incoming data from server 
         $arr = array();
 
+        // Use this array to push all objects added before
         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
             array_push($arr, array(
                 'sku' => $row['sku'],
@@ -45,5 +46,21 @@ class Database
         }
         return $arr;
         mysqli_close($con);
+    }
+
+    public function insertDataToTable($sku, $name, $price)
+    {
+        $con = mysqli_connect("localhost", "root", "", "example");
+
+        // Check connection
+        if (mysqli_connect_errno()) {
+            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        } else {
+
+            // Operate the inserting query
+            $query = "INSERT INTO mytable (sku, name, price) VALUES ('$sku', '$name', '$price')";
+            $result = mysqli_query($con, $query);
+            mysqli_close($con);
+        }
     }
 }
