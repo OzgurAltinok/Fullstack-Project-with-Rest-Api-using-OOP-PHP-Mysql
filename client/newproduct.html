@@ -16,33 +16,37 @@
       <h2>Product Add</h2>
       <span>
         <form action="index.html">
-          <input type="button" value="Save" />
+          <input type="button" value="Save" onclick="PostRequest()" />
           <input type="submit" value="Go Back" />
         </form>
       </span>
     </span>
 
     <hr />
-    <div id="one">
+    <div id="newProductDiv">
       <form>
-        SKU:<br />
-        <input type="text" name="sku" /><br />
-        Name:<br />
-        <input type="text" name="name" /><br />
-        Price:<br />
-        <input type="text" name="price" /><br /><br />
+        <div id="myFormDiv">
+          SKU:<br />
+          <input type="text" name="sku" /><br />
+          Name:<br />
+          <input type="text" name="name" /><br />
+          Price:<br />
+          <input type="text" name="price" /><br /><br />
+        </div>
         Type Switcher:
-        <select>
-          <option value="sku" selected>Book</option>
-          <option value="name">Dvddisc</option>
-          <option value="price">Furniture</option>
+        <select id="switcher">
+          <option value="">--Please choose an option--</option>
+          <option value="sku" id="book_option">Book</option>
+          <option value="name" id="dvd_option">Dvddisc</option>
+          <option value="price" id="furniture_option">Furniture</option>
         </select>
       </form>
+      <div id="SwitcherBoxes"></div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <!-- <script src="main.js"></script> -->
+    <script src="newproduct-script.js"></script>
   </body>
 </html>

@@ -1,8 +1,5 @@
 <?php
 
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
-
 include_once "./database_config.php";
 include_once "./models/Product.php";
 include_once "./models/Book.php";
@@ -11,7 +8,9 @@ include_once "./models/Furniture.php";
 
 
 $database = new Database();
-$db = $database->getConnection();
+// $db = $database->getConnection();
+
+$database->enableCorsAttack();
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -77,5 +76,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 }
 
 elseif ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
-
+// not yet
 }

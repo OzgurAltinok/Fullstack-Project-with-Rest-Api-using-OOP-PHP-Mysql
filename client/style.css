@@ -1,8 +1,14 @@
-div {
+#productListDiv {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
+
+#newProductDiv {
+  display: flex;
+  justify-content: center;
+}
+
 p {
   background-color: #f1f1f1;
   margin: 1%;
