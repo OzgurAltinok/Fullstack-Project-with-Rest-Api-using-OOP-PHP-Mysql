@@ -1,32 +1,42 @@
-// Create an array to store data
-const arr = [];
-
 // Create axios get request
 axios
   .get("http://localhost:8000")
   .then(function(response) {
-    // Add the data to array
-    arr.push(response.data);
+    // Iterating over entries in data
+    response.data.forEach((value, i) => {
+      //This is for seperating different types of data
+      var uniqueIdentifier;
+      if (Object.keys(value)[3] == "weight") {
+        uniqueIdentifier = Object.values(value)[3] + "KG";
+      } else if (Object.keys(value)[3] == "size") {
+        uniqueIdentifier = "Size:" + Object.values(value)[3] + "MB";
+      } else uniqueIdentifier = "Dimensions:" + Object.values(value)[3];
 
-    // Create box for all entries
-    arr[0].forEach((value, i) => {
-      // DOM things to create boxes for each array element
-      var box = document.createElement("p");
-      var text = document.createTextNode(
-        value.sku + "\n" + value.name + "\n" + value.price
+      //Use p tag for storing elements
+      var myP = $(
+        "<p>" +
+          Object.values(value)[0] +
+          " " +
+          Object.values(value)[1] +
+          " " +
+          Object.values(value)[2] +
+          "$ " +
+          uniqueIdentifier +
+          "</p>"
       );
-      var checkBox = document.createElement("input");
 
-      checkBox.type = "checkbox";
-      checkBox.name = "productCheck";
-      checkBox.id = "isSelected" + i;
-      checkBox.className = "CheckClass";
-      //   checkBox.checked = "checked";
+      $("<input />", {
+        type: "checkbox",
+        id: "isSelected" + i,
+        name: "productCheck"
+      }).appendTo(myP);
 
-      box.appendChild(text);
-      box.appendChild(checkBox);
+      $("#productListDiv").append(myP);
+    });
 
-      document.getElementById("productListDiv").appendChild(box);
+    $("#isSelected2").click(function() {
+      var $div = $(this);
+      console.log($div.parent().text());
     });
   })
   .catch(function(error) {

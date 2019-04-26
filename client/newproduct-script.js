@@ -131,7 +131,7 @@ function PostRequest() {
     dimensions: dimensions
   };
 
-  // Make request
+  // Make request for save the data
   axios
     .post("http://localhost:8000", obj)
     .then(function(response) {

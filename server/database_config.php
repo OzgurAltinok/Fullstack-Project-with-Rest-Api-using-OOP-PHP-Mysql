@@ -158,6 +158,7 @@ class Database
         // Request to get all data as a json
         echo json_encode($myData);
     }
+    
 
     //To make request from another port
     public function enableCorsAttack()
@@ -182,4 +183,6 @@ class Database
         exit(0);
     }
     }
+
+    
 }
